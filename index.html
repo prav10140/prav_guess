@@ -125,7 +125,7 @@
 
       if (userGuess === targetNumber) {
         feedback.textContent = `🎉 Correct! You guessed it in ${attempts} tries.`;
-        feedback.style.color = 'green';
+        feedback.style.color = 'orange';
         endGame();
       } else if (userGuess > targetNumber) {
         feedback.textContent = '📉 Too high! Try again.';
