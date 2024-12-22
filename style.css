@@ -1,72 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 body {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+    color: #fff;
+    text-align: center;
 }
 
 .container {
-    text-align: center;
-    background: #fff;
-    padding: 20px;
+    padding: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-input[type="number"] {
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
     padding: 10px;
-    margin: 10px 0;
-    width: 80%;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border: none;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    width: 100%;
+    padding: 10px;
+    background: #ff7e5f;
     border: none;
     border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background: #ff6a4d;
 }
 
-#feedback {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #ff0000;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 1.5em;
+.result {
+    font-size: 1.2rem;
     font-weight: bold;
-    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 10px;
 }
 
-.success {
-    color: green;
-}
-
-.game-over {
-    color: red;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
