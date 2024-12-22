@@ -6,20 +6,22 @@ function checkGuess() {
     const feedback = document.getElementById('feedback');
     const result = document.getElementById('result');
     const guess = parseInt(guessInput.value);
-    
+
     attempts++;
-    
+
     if (guess > n) {
-        feedback.textContent = Enter a number lesser than ${guess};
+        feedback.textContent = `Enter a number lesser than ${guess}`;
     } else if (guess < n) {
-        feedback.textContent = Enter a number greater than ${guess};
+        feedback.textContent = `Enter a number greater than ${guess}`;
     } else {
-        result.textContent = You guessed it right in ${attempts} attempts! The number is ${n};
+        result.textContent = `You guessed it right in ${attempts} attempts! The number is ${n}`;
         feedback.textContent = '';
+        result.classList.add('success');
     }
 
     if (attempts >= 5 && guess !== n) {
-        result.textContent = GAME OVER. BETTER LUCK NEXT TIME! The number was ${n};
+        result.textContent = `GAME OVER. BETTER LUCK NEXT TIME! The number was ${n}`;
         feedback.textContent = '';
+        result.classList.add('game-over');
     }
 }
