@@ -1,27 +1,25 @@
-let n = Math.floor(Math.random() * 100) + 1;
-let attempts = 0;
+// Secret number (randomly generated)
+const secretNumber = Math.floor(Math.random() * 100) + 1;
 
-function checkGuess() {
-    const guessInput = document.getElementById('guessInput');
-    const feedback = document.getElementById('feedback');
-    const result = document.getElementById('result');
-    const guess = parseInt(guessInput.value);
+document.getElementById("submit-btn").addEventListener("click", () => {
+    const guess = parseInt(document.getElementById("guess").value);
+    const name = document.getElementById("name").value;
+    const resultElement = document.getElementById("result");
 
-    attempts++;
+    if (!guess || guess < 1 || guess > 100 || !name) {
+        resultElement.textContent = "Please enter a valid number and your name!";
+        resultElement.style.color = "red";
+        return;
+    }
 
-    if (guess > n) {
-        feedback.textContent = `Enter a number lesser than ${guess}`;
-    } else if (guess < n) {
-        feedback.textContent = `Enter a number greater than ${guess}`;
+    if (guess === secretNumber) {
+        resultElement.textContent = `🎉 Congratulations, ${name}! You guessed the number correctly!`;
+        resultElement.style.color = "limegreen";
+    } else if (guess < secretNumber) {
+        resultElement.textContent = `${name}, too low! Try again.`;
+        resultElement.style.color = "yellow";
     } else {
-        result.textContent = `You guessed it right in ${attempts} attempts! The number is ${n}`;
-        feedback.textContent = '';
-        result.classList.add('success');
+        resultElement.textContent = `${name}, too high! Try again.`;
+        resultElement.style.color = "orange";
     }
-
-    if (attempts >= 5 && guess !== n) {
-        result.textContent = `GAME OVER. BETTER LUCK NEXT TIME! The number was ${n}`;
-        feedback.textContent = '';
-        result.classList.add('game-over');
-    }
-}
+});
